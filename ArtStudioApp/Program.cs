@@ -1,6 +1,11 @@
-﻿
-// See https://aka.ms/new-console-template for more information
+﻿using System;
+using ArtStudioApp;
 
-using System;
+var db = new DbContext();
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("=== Инициализация базы данных ===");
+db.InitializeDatabase();
+Console.WriteLine("База данных создана и заполнена тестовыми данными");
+
+Console.WriteLine("\n=== РЕЗУЛЬТАТ ЗАПРОСА ===\n");
+db.PrintProjectParticipants();
